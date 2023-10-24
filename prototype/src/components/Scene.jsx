@@ -13,8 +13,7 @@ import { useGLTF } from "@react-three/drei";
 export default function Model(props) {
   const { nodes, materials } = useGLTF("./assets/room/scene-transformed.glb");
   return (
-    
-    <group {...props} dispose={null}>
+    <group position={[0, 0, 0]} {...props} dispose={null}>
       <mesh
         geometry={nodes.Plane_Material_0.geometry}
         material={materials.Material}
