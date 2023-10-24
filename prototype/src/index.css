@@ -9,11 +9,12 @@ body,
 }
 
 body{
-    background-image: url(./components/back.jpg);
+    /* background-image: url(./components/back.jpg); */
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
+  background-color: #111111;
 
 }
 
@@ -46,6 +47,5 @@ h1{
 .preview {
   margin-top: 20px;
   padding: 20px;
-  background-color: #fff;
   height: 500px;
 }
