@@ -1,3 +1,8 @@
+@font-face {
+  font-family: cookie;
+  src: url(./fonts/Cookie-Regular.ttf);
+}
+
 html,
 body,
 #root {
@@ -12,6 +17,7 @@ body,
   --main-color: #8B5A2D;
   --text-color: white;
   --sub-color: #F2DBB6;
+  --orange: #E1583C;
 }
 
 
@@ -25,36 +31,42 @@ body{
 
 }
 
-.div{
-  width: 30% ;
-  cursor: pointer;
-}
-
-.div:hover{
-  transition: 0.5s;
-  scale: 1.1;
-
-}
-
-.div-flex{
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-direction: column;
-}
 
 h1{
-  font-size: 60pt;
-  color: var(--main-color);
-  font-family: Segoe Print;
+  font-size: 30pt;
+  color: var(--orange);
+  font-family: cookie;
+    text-align: center;
 }
 
 h2{
-  font-size: 30pt;
+  font-size: 25pt;
   color: var(--main-color);
   font-weight: 300;
   font-family: Segoe Print;
   text-align: center;
+}
+
+h3{
+  font-size: 20pt;
+  color: white;
+  font-family: cookie;
+
+}
+
+h4{
+  font-size: 25pt;
+  color: var(--main-color);
+  font-family: cookie;
+
+
+}
+
+li{
+  font-size: 15pt;
+  color: var(--main-color);
+  font-family: cookie;
+
 }
 
 /* CSS */
@@ -111,28 +123,35 @@ h2{
 }
 
 
+.div {
+  width: 13%;
+  cursor: pointer;
+  z-index: 5;
+  background-color: var(--orange);
+  margin: 1%;
+  padding-left: 1%;
+  position: relative;
+  
+}
 
-.container-flex {
+.div:hover {
+  transition: 0.5s;
+  background-color: var(--main-color);
+
+}
+
+/* .div-flex {
   display: flex;
-  align-items: center;
-  flex-wrap: nowrap;
-  padding: 10px;
-}
+  justify-content: space-around;
+  align-items: left;
+  flex-direction: column;
+  position: absolute;
+  
+} */
 
-.container-flex > div {
-  margin: 10px;
-  padding: 20px;
-  width: 100%;
-  height: 100%;
-  background-color: #F2DBB6;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
 
-#object{
-    box-shadow: none;
-}
 
+/* 
 .container-items {
   margin: 10px;
   padding: 20px;
@@ -162,4 +181,60 @@ h2{
 
 .container-item::-webkit-scrollbar-track {
   background: #F2DBB6;
+} */
+
+.recepy-title{
+  position: absolute;
+    margin-left: 20%;
+}
+#object{
+  position: absolute;
+  margin-left: 15%;
+  margin-top: 5%;
+}
+
+.ingredients{
+  z-index: 5;
+  position: absolute;
+  margin-left: 55%;
+  margin-top: 5%;
+}
+
+.instructions{
+  z-index: 5;
+  position: absolute;
+  margin-left: 55%;
+  margin-top: 23%;
+  width: 28%;
+
+}
+
+
+
+.cookbook{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  border: red solid 1pt;
+}
+.cookbook img{
+ width: 80%;
+ position: absolute;
+}
+
+@media  (min-width: 600px) {
+h1 {
+  
+  font-size: 50pt;
+
+}
+
+h2 {
+  font-size: 25pt;
+
+}
 }

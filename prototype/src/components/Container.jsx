@@ -4,10 +4,10 @@ import Ramen from "./models/Ramen";
 import Hotdog from "./models/Hotdog";
 import Resto from "./models/Resto";
 import Cookie from "./models/Cookie";
+import book from "../images/vitagebook.png";
 
 const Container = () => {
   const [selectedItem, setSelectedItem] = useState("Pancakes"); // Set "Pancakes" as the default selected item
-  const [ambientLightIntensity, setAmbientLightIntensity] = useState(1);
   const [showGroup, setShowGroup] = useState(true); // Define the showGroup state
   const [buttonClicked, setButtonClicked] = useState(false); // Track if the button has been clicked
 
@@ -122,80 +122,102 @@ const Container = () => {
   return (
     <div className="">
       <h2 style={{ textAlign: "center" }}>Recipes</h2>
+
+      {/* book */}
+      <div className="recepy-div">
+        <div className="cookbook">
+          <img src={book} alt="" />
+        </div>
+      </div>
+
       <div className="container-flex">
         <div className="container-item">
-          <div className="div-flex">
-            <div
-              className={`div ${
-                selectedItem === "Pancakes" ? "active-title" : "inactive-title"
-              }`}
-              onClick={() => onItemClick("Pancakes")}
-            >
-              <h3>Pancakes</h3>
+          {selectedItem && (
+            <div className="recepy-title">
+              <h2>{recipes[selectedItem].title}</h2>
             </div>
-
-            <div
-              className={`div ${
-                selectedItem === "Ramen" ? "active-title" : "inactive-title"
-              }`}
-              onClick={() => onItemClick("Ramen")}
-            >
-              <h3>Ramen</h3>
-            </div>
-
-            <div
-              className={`div  ${
-                selectedItem === "Hotdog" ? "active-title" : "inactive-title"
-              }`}
-              onClick={() => onItemClick("Hotdog")}
-            >
-              <h3>Hotdog</h3>
-            </div>
-
-            <div
-              className={`div  ${
-                selectedItem === "Cookie" ? "active-title" : "inactive-title"
-              }`}
-              onClick={() => onItemClick("Cookie")}
-            >
-              <h3>Cookies</h3>
-            </div>
-          </div>
+          )}
         </div>
 
+        {/* object */}
         <div id="object" className="container-item">
           {selectedComponent && (
             <div className="preview">
-              <button onClick={closePreview} className="close-button">
-                Close
-              </button>
-
               {React.createElement(selectedComponent)}
             </div>
           )}
         </div>
 
-        <div className="container-item container-items">
+        {/* recipe */}
+        <div className="container-item">
           {selectedItem && (
             <div>
-              <h2>{recipes[selectedItem].title}</h2>
-              <h3>Ingredients:</h3>
-              <ul>
-                {recipes[selectedItem].ingredients.map((ingredient, index) => (
-                  <li key={index}>{ingredient}</li>
-                ))}
-              </ul>
-              <h3>Instructions:</h3>
-              <ol>
-                {recipes[selectedItem].instructions.map((step, index) => (
-                  <li key={index}>{step}</li>
-                ))}
-              </ol>
+              <div className="ingredients">
+                {/* <h2>{recipes[selectedItem].title}</h2> */}
+                <h4>Ingredients:</h4>
+                <ul>
+                  {recipes[selectedItem].ingredients.map(
+                    (ingredient, index) => (
+                      <li key={index}>{ingredient}</li>
+                    )
+                  )}
+                </ul>
+              </div>
+              <div className="instructions">
+                <h4>Instructions:</h4>
+                <ol>
+                  {recipes[selectedItem].instructions.map((step, index) => (
+                    <li key={index}>{step}</li>
+                  ))}
+                </ol>
+              </div>
             </div>
           )}
         </div>
       </div>
-      <div style={{ height: "100vh" }}>
+      {/* filter */}
+      <div className="container-item">
+        <div style={{ zIndex: 5 }} className="div-flex">
+          <div
+            className={`div ${
+              selectedItem === "Pancakes" ? "active-title" : "inactive-title"
+            }`}
+            onClick={() => onItemClick("Pancakes")}
+          >
+            <h3>Pancakes</h3>
+          </div>
+
+          <div
+            className={`div ${
+              selectedItem === "Ramen" ? "active-title" : "inactive-title"
+            }`}
+            onClick={() => onItemClick("Ramen")}
+          >
+            <h3>Ramen</h3>
+          </div>
+
+          <div
+            className={`div  ${
+              selectedItem === "Hotdog" ? "active-title" : "inactive-title"
+            }`}
+            onClick={() => onItemClick("Hotdog")}
+          >
+            <h3>Hotdog</h3>
+          </div>
+
+          <div
+            className={`div  ${
+              selectedItem === "Cookie" ? "active-title" : "inactive-title"
+            }`}
+            onClick={() => onItemClick("Cookie")}
+          >
+            <h3>Cookies</h3>
+          </div>
+        </div>
+      </div>
+
+      {/* grandma */}
+      <div style={{ height: "100vh", marginTop: "100vh" }}>
         <h2>Help Grandma</h2>
         <p>
           Oh no, grandma is feeling tired! Let's lend a hand and help her clean

@@ -6,12 +6,23 @@ import grandma from "../images/grandma.png";
 const Home = () => {
   return (
     <div className="home">
-      {/* <h2>Welcome to</h2>
-      <h1>Grandma's Kitchen</h1> */}
+      <h2
+        style={{
+          marginTop: "5%",
+        }}
+      >
+        Welcome to
+      </h2>
+      <h1
+        style={{
+          marginTop: "0%",
+        }}
+      >
+        Grandma's Kitchen
+      </h1>
       <img id="home-img" src={image} alt="" />
       <img id="grandma-img" src={grandma} alt="" />
       <img id="overlay" src={overlay} alt="" />
-
     </div>
   );
 };
