@@ -1,14 +1,13 @@
-import { Canvas } from '@react-three/fiber'
-import Model from './components/Scene'
-import { OrbitControls } from "@react-three/drei";
-import RoomModel from './components/RoomModel'
+
 import Container from './components/Container';
+import Home from './components/Home';
 
 
 function App() {
   
   return (
   <>
+    <Home/>
     <Container/>
     
 
