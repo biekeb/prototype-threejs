@@ -74,7 +74,34 @@ h2{
   align-items: center;
   flex-direction: column;
   height: 100vh;
-  background-image: url(./images/Mask\ Group\ 1.png);
+  /* background-image: url(./images/Mask\ Group\ 1.png); */
+}
+
+#grandma-img{
+  mix-blend-mode:luminosity;
+    display: flex;
+      align-items: center;
+      flex-direction: column;
+      margin-top: 30vh;
+      height: 70%;
+      position: absolute;
+}
+#home-img {
+  mix-blend-mode: color-burn;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+}
+
+#overlay {
+  height: 100vh;
+  width: 100%;
+  mix-blend-mode: overlay;
+  position: absolute;
+
 }
 
 .preview {
@@ -83,9 +110,6 @@ h2{
   height: 500px;
 }
 
-#img{
-  mix-blend-mode: color-burn;
-}
 
 
 .container-flex {
