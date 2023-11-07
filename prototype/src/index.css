@@ -5,8 +5,15 @@ body,
   left: 0;
   width: 100%;
   height: 100%;
-  
+  margin: 0;
 }
+
+:root {
+  --main-color: #8B5A2D;
+  --text-color: white;
+  --sub-color: #F2DBB6;
+}
+
 
 body{
     /* background-image: url(./components/back.jpg); */
@@ -14,12 +21,11 @@ body{
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
-  background-color: #111111;
+  background-color: #F2DBB6;
 
 }
 
 .div{
-  background-color:aliceblue;
   width: 30% ;
   cursor: pointer;
 }
@@ -34,18 +40,102 @@ body{
   display: flex;
   justify-content: space-around;
   align-items: center;
+  flex-direction: column;
 }
 
 h1{
-  text-align: center;
   font-size: 60pt;
-  color: #ffffff;
-  font-family: sans-serif;
-  text-shadow: 0px 2px 4px #00c3ff;  
+  color: var(--main-color);
+  font-family: Segoe Print;
+}
+
+h2{
+  font-size: 30pt;
+  color: var(--main-color);
+  font-weight: 300;
+  font-family: Segoe Print;
+  text-align: center;
+}
+
+/* CSS */
+.active-title {
+  color: black;
+  
+  /* Set the color you want for active titles */
+}
+
+.inactive-title {
+  color: grey;
+  /* Set the color you want for inactive titles */
+}
+
+.home{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  background-image: url(./images/Mask\ Group\ 1.png);
 }
 
 .preview {
   margin-top: 20px;
   padding: 20px;
   height: 500px;
+}
+
+#img{
+  mix-blend-mode: color-burn;
+}
+
+
+.container-flex {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  padding: 10px;
+}
+
+.container-flex > div {
+  margin: 10px;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  background-color: #F2DBB6;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+#object{
+    box-shadow: none;
+}
+
+.container-items {
+  margin: 10px;
+  padding: 20px;
+  width: 100%;
+  background-color: #F2DBB6;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255, 180, 82, 0.5);
+  overflow-y: auto;
+  max-height: 300px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--main-color) ;
+}
+
+.container-item::-webkit-scrollbar {
+  border-radius: 20px;
+  width: 10px;
+}
+
+.container-item::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+  background-color: var(--main-color);
+}
+
+.container-item::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+.container-item::-webkit-scrollbar-track {
+  background: #F2DBB6;
 }
