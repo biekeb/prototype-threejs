@@ -7,6 +7,7 @@ const Home = () => {
   return (
     <div className="home">
       <h2
+        id="welcome"
         style={{
           marginTop: "5%",
         }}

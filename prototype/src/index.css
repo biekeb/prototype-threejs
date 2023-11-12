@@ -18,6 +18,9 @@ body,
   --text-color: white;
   --sub-color: #F2DBB6;
   --orange: #E1583C;
+  --active-orange: #963420;
+  --background: #DDBF8D;
+
 }
 
 
@@ -27,7 +30,7 @@ body{
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
-  background-color: #F2DBB6;
+  background-color: var(--background);
 
 }
 
@@ -41,15 +44,14 @@ h1{
 
 h2{
   font-size: 25pt;
-  color: var(--main-color);
+  color: var(--orange);
   font-weight: 300;
-  font-family: Segoe Print;
+  font-family: cookie;
   text-align: center;
 }
 
 h3{
   font-size: 20pt;
-  color: white;
   font-family: cookie;
 
 }
@@ -58,8 +60,13 @@ h4{
   font-size: 25pt;
   color: var(--main-color);
   font-family: cookie;
+}
 
-
+p{
+  font-size: 20pt;
+  color: var(--main-color);
+  font-family: cookie;
+  text-align: center;
 }
 
 li{
@@ -69,15 +76,21 @@ li{
 
 }
 
+#welcome{
+  color: var(--main-color);
+}
+
 /* CSS */
 .active-title {
-  color: black;
+  color: rgb(255, 255, 255);
+    background-color: var(--active-orange);
   
   /* Set the color you want for active titles */
 }
 
 .inactive-title {
-  color: grey;
+  color: rgb(240, 240, 240);
+    background-color: var(--orange);
   /* Set the color you want for inactive titles */
 }
 
@@ -113,7 +126,20 @@ li{
   width: 100%;
   mix-blend-mode: overlay;
   position: absolute;
+  opacity: 60%;
 
+}
+
+#overlay2{
+      height: 120vh;
+      width: 100%;
+      mix-blend-mode: overlay;
+      position: absolute;
+      opacity: 60%;
+      z-index: -5;
+      margin-top: -19%;
+  
+    
 }
 
 .preview {
@@ -127,7 +153,6 @@ li{
   width: 13%;
   cursor: pointer;
   z-index: 5;
-  background-color: var(--orange);
   margin: 1%;
   padding-left: 1%;
   position: relative;
@@ -136,7 +161,7 @@ li{
 
 .div:hover {
   transition: 0.5s;
-  background-color: var(--main-color);
+  background-color: orangered;
 
 }
 
@@ -219,11 +244,33 @@ li{
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
-  border: red solid 1pt;
 }
 .cookbook img{
  width: 80%;
  position: absolute;
+}
+
+
+
+#help-button{
+  display: block;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: var(--orange);
+  border-radius: 10px;
+  border: none;
+  color: var(--text-color);
+  font-size: 20pt;
+  font-family: cookie;
+  cursor: pointer;
+  transition: all .4s ease-in-out;
+}
+
+#help-button:hover {
+  background-color: var(--active-orange);
+  transform: scale(1.01);
+
+
 }
 
 @media  (min-width: 600px) {
@@ -234,7 +281,7 @@ h1 {
 }
 
 h2 {
-  font-size: 25pt;
+  font-size: 30pt;
 
 }
 }
