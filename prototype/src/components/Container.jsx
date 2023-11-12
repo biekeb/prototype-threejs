@@ -3,8 +3,8 @@ import Pancakes from "./models/Pancakes";
 import Ramen from "./models/Ramen";
 import Hotdog from "./models/Hotdog";
 import Resto from "./models/Resto";
-import Cookie from "./models/Cookie";
 import book from "../images/vitagebook.png";
+import overlay from "../images/Image 14.png";
 
 const Container = () => {
   const [selectedItem, setSelectedItem] = useState("Pancakes"); // Set "Pancakes" as the default selected item
@@ -19,7 +19,6 @@ const Container = () => {
     Pancakes: Pancakes,
     Ramen: Ramen,
     Hotdog: Hotdog,
-    Cookie: Cookie,
   };
 
   const recipes = {
@@ -85,25 +84,7 @@ const Container = () => {
         "Serve hot and enjoy your delicious hotdogs!",
       ],
     },
-    Cookie: {
-      title: "Cookies",
-      ingredients: [
-        "2 hotdog buns",
-        "2 hotdogs",
-        "1/4 cup of diced onions",
-        "1/4 cup of diced tomatoes",
-        "1/4 cup of shredded cheddar cheese",
-        "Mustard and ketchup for garnish",
-      ],
-      instructions: [
-        "Preheat a grill or stovetop pan to medium-high heat.",
-        "Place the hotdogs on the grill or pan and cook until they are heated through and have grill marks (usually 5-7 minutes).",
-        "Toast the buns on the grill or in a toaster until they are lightly browned.",
-        "Place a hotdog in each bun and top with diced onions, diced tomatoes, and shredded cheddar cheese.",
-        "Drizzle with mustard and ketchup, or your favorite condiments.",
-        "Serve hot and enjoy your delicious hotdogs!",
-      ],
-    },
+
   };
 
   const closePreview = () => {
@@ -205,16 +186,9 @@ const Container = () => {
             <h3>Hotdog</h3>
           </div>
 
-          <div
-            className={`div  ${
-              selectedItem === "Cookie" ? "active-title" : "inactive-title"
-            }`}
-            onClick={() => onItemClick("Cookie")}
-          >
-            <h3>Cookies</h3>
-          </div>
         </div>
       </div>
+      <img id="overlay2" src={overlay} alt="" />
 
       {/* grandma */}
       <div style={{ height: "100vh", marginTop: "100vh" }}>
@@ -226,7 +200,7 @@ const Container = () => {
 
         {!buttonClicked ? (
           <div>
-            <button onClick={handleButtonClick}>
+            <button id="help-button" onClick={handleButtonClick}>
               {showGroup ? "lent out a hand" : "Show Group"}
             </button>
           </div>
